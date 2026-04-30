@@ -166,6 +166,7 @@ body{
     font-size: 1.5rem;
     display: grid;
     place-content: center;
+	background-color: #F6F5F6;
 }
    
 
@@ -181,6 +182,7 @@ body{
         border-radius: 10px;
         color: var(--clr-black);
     }
+	
 
 .bento-grid > :nth-child(1){
     background-color: var(--clr-yellow-100);
@@ -234,28 +236,131 @@ body{
 .bento-grid .card:nth-child(3){
     background-color: var(--clr-purple-100);
     padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	overflow: hidden;
+	gap: 1.5rem;
+
+	p{
+		font-size: 2rem;
+		font-weight: 500;
+		line-height: 28px;
+		letter-spacing: -1px;
+	}
+
+	p:nth-of-type(2){
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0;
+	
+	}
+
+	
+		img {
+			max-width: none;
+  			width: 22rem;
+  			margin-left: 1rem;
+	}
 }   
 .bento-grid .card:nth-child(4){
     background-color: var(--clr-yellow-500);
     padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 4.5rem;
+	font-size: 2.5rem;
+	line-height: 36px;
+	letter-spacing: 2px;
+	font-weight: 500;
+
 }   
 .bento-grid .card:nth-child(5){
     background-color: var(--clr-white);
-    padding: 1.5rem;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+gap: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -1px;
+
+  overflow: hidden; /* THIS is key */
+
+  img{
+	max-width: none;   /* overrides your global reset */
+  width: 120%;      /* makes image larger than container */
+  }
     
 }   
 .bento-grid .card:nth-child(6){
     background-color: var(--clr-yellow-500);
     padding: 1.5rem;
     padding-bottom: 0px;
+	font-size: 2rem;
+	line-height: 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	overflow-y: hidden;
+
+	img{
+		position: relative;
+	}
+
 }   
 .bento-grid .card:nth-child(7){
     background-color: var(--clr-white);
     padding: 1.5rem;
-}   
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	p{
+		font-size: 1rem;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: .5rem;
+	}
+
+	span{
+		font-size: 3.5rem;
+	}
+
+
+
+}
+	
+		
+	
+   
 
 .bento-grid > :nth-child(8){
     padding: 1.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 2.5rem;
+	background-color: var(--clr-purple-500);
+	color: white;
+	line-height: 36px;
+	letter-spacing: -2px;
+	gap: .5rem;
+	font-weight: 500;
+	img{
+		width: 100%;
+	}
+
     
 }   
 
@@ -267,9 +372,10 @@ body{
     .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, auto);
-  gap: 2rem;
+  grid-template-rows: 14rem 5rem 15rem 16rem;
+  gap: 1.5rem;
   max-width: 1120px;
+  background-color: #F6F5F6;
 
 
   grid-template-areas:
@@ -335,3 +441,178 @@ body{
     margin: 0;
     padding: 0;
 }
+
+
+@media (max-width: 870px){
+	.bento-grid{
+	 grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "card2 card2"
+      "card5 card6"
+      "card3 card3"
+      "card3 card3"
+      "card8 card8"
+      "card7 card7"
+      "card1 card4";
+
+	  padding: 3.25rem ;
+  }
+	
+  .bento-grid > :nth-child(1) {
+
+}
+
+.bento-grid > :nth-child(2) {
+	
+	
+	font-size: 3.375rem;
+	line-height: 48px;
+	letter-spacing: -2.16px;
+	text-align: center;
+
+	.review-container p{
+		font-size: 1.125rem;
+		letter-spacing: 0;
+		line-height: 20px;
+	}
+	
+}
+
+.bento-grid .card:nth-child(3) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	p:nth-of-type(2){
+		text-align: center;
+		max-width: 359px;
+	}
+	
+}
+
+.bento-grid .card:nth-child(4) {
+
+}
+
+.bento-grid .card:nth-child(5) {
+	justify-content: space-between;
+}
+
+.bento-grid .card:nth-child(6) {
+	font-size: 1.75rem;
+	line-height: 26px;
+	letter-spacing: -1.68px;
+}
+
+.bento-grid .card:nth-child(7) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	img{
+		max-width: 100%;
+		width: 25%;
+	}
+	
+}
+ 
+
+
+}
+
+ @media (max-width: 575px){
+		.bento-grid{
+	 grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "card2"
+	  "card5"
+	  "card6"
+	  "card3"
+	  "card8"
+	  "card7"
+	  "card1"
+	  "card4";
+	  
+
+	  padding: 1.25rem ;
+  }
+
+
+  .bento-grid > :nth-child(1) {
+
+}
+
+.bento-grid > :nth-child(2) {
+	font-size: 46px;
+	line-height: 42px;
+	letter-spacing: -1px;
+	padding: 2rem 2.5rem;
+
+}
+
+.bento-grid .card:nth-child(3) {
+	text-align: center;
+	font-size: 1.625rem;
+	color: black;
+	line-height: 24px;
+	letter-spacing: -1.56px;
+	padding: 1.5rem;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	img{
+		max-width: 100%;
+	}
+
+}
+
+.bento-grid .card:nth-child(4) {
+
+}
+
+.bento-grid .card:nth-child(5) {
+	font-size: 1.625rem;
+	
+}
+
+.bento-grid .card:nth-child(6) {
+
+}
+
+.bento-grid .card:nth-child(7) {
+	flex-direction: column;
+	font-size: 1rem;
+	align-items: flex-start;
+	span{
+		font-size:2.875rem;
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+		align-self: flex-start;
+	}
+	img{
+		width: 50%;
+	}
+}
+
+.bento-grid .card:nth-child(8) {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 1.5rem;
+	padding: 1.5rem 2rem;
+
+
+}
+
+
+
+}
+
+
